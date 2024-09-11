@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다음 단계</title>
+    <link rel="stylesheet" href="https://unpkg.com/pico.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/2page.jpg'); /* 백그라운드 이미지 경로 */
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh; /* 화면 높이를 100%로 설정 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        main {
+            position: relative; /* 버튼 위치 조정을 위해 */
+            width: 100%; /* main 영역을 전체 넓이로 */
+            height: 100%; /* main 영역을 전체 높이로 */
+        }
+        button {
+            position: absolute;
+            padding: 30px 50px !important; /* 버튼 크기를 키움 */
+            font-size: 25px !important; /* 버튼 글씨 크기를 키움 */
+            color: #fff;
+            background-color: #B22222 !important;
+            border: none;
+            border-radius: 8px; /* 버튼 둥글기를 더 증가 */
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #A52A2A !important;
+        }
+        #next-stage {
+            position: absolute; /* 절대 위치를 사용해 버튼을 고정 */
+            right: 150px; /* 오른쪽에서 20px 떨어진 위치 */
+            bottom: 80px; /* 아래쪽에서 20px 떨어진 위치 */
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #next-stage:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <button id="next-stage" onclick="goToNextStage()">게임 시작</button>
+    </main>
+
+    <script>
+        function goToNextStage() {
+            window.location.href = '/pose_page'; // Flask의 pose_page 라우트로 이동
+        }
+    </script>
+</body>
+</html>

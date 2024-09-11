@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자세 인식</title>
+    <link rel="stylesheet" href="https://unpkg.com/pico.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('static/1stage.jpg'); /* 백그라운드 이미지 */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh; /* 화면 높이를 100%로 설정 */
+        }
+        main {
+            margin-top: 100px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end; /* 주 내용의 배치를 아래로 정렬 */
+            height: calc(100vh - 100px);
+            position: relative; /* 버튼을 절대 위치로 배치하기 위해 설정 */
+        }
+        button {
+            position: absolute;
+            bottom: 80px; /* 버튼을 화면 아래에서 더 위로 조정 (80px) */
+            padding: 30px 50px !important;/* 버튼 크기를 키움 */
+            font-size: 25px !important; /* 버튼 글씨 크기를 키움 */
+            color: #fff;
+            background-color: #B22222;
+            border: none;
+            border-radius: 8px; /* 버튼 둥글기를 더 증가 */
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #A52A2A;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <button onclick="startExercise()">시작하기</button>
+    </main>
+
+    <script>
+        function startExercise() {
+            window.location.href = '/next_page'; // Flask 라우트로 이동
+        }
+    </script>
+</body>
+</html>
